@@ -1,0 +1,34 @@
+{% extends "userapp/base1.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container-fluid pt-5 " style="height: 60%">
+        <div class="row pt-1 m-5" style="background-color: #b3c6ff">
+                 <div class="col pt-5">
+                     <div class="content-section pt-5">
+                         <div class="media d-flex pt-5 justify-content-center">
+                            <img class="rounded-circle shadow-lg" height="200" width="200" src="{{ user.profiles.image.url }}">
+                        </div>
+                     </div>
+                     <div class="container ">
+                         <div class="media-body pt-5  text-center">
+                         <h2 class=accout-heading">{{ user.username }}</h2>
+                         <p class="text-secondary">{{ user.email }}</p>
+                     </div>
+                     </div>
+                 </div>
+                <div class="col  pt-2">
+                    <form method = "POST" enctype = "multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class = "form-group">
+                            <legend class = "border-bottom mb-4">Profile Info </legend>
+                            {{ u_form|crispy }}
+                            {{ p_form|crispy }}
+                        </fieldset>
+                        <div class = "form-group">
+                            <button class = "btn btn-primary" type="submit">Update </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+{% endblock content %}

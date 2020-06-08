@@ -1,0 +1,42 @@
+{%  extends 'userapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container pt-5">
+         <div class="container md-auto pt-5">
+            <div class="container border-right border-left bg-light p-4" style="opacity: 0.8">
+                <h1>Item Details</h1>
+                <div class="container p-5">
+                        <div class="col text-center p-0 m-0">
+                            <h5 class="display-4">Owner</h5>
+                            <a href="{% url 'view_profile' object.name %}"><img class="rounded-circle shadow-lg p-0" height="100" width="100" src="{{ object.name.profiles.image.url }}" alt=""></a>
+                            <a class="text-decoration-none text-dark" href="{% url 'view_profile' object.name %}"><h3 class="display-4">{{ object.name.username }}</h3></a>
+                        </div>
+                        <div class="container d-flex justify-content-end">
+                            <a href="{% url 'give-notification' object.name.username %}">Send a notification</a>
+                        </div>
+                    </div>
+                <div class="container p-3 shadow-lg bg-light" data-aos="zoom-out-up" style="opacity: 0.8">
+                    <div class="row">
+                    <div class="col">
+                        <h6>Name</h6>
+                        {{ object.item }}
+                    </div>
+                    <div class="col">
+                        <h6>Condition</h6>
+                        {{ object.condition }}
+                    </div>
+                        <div class="col">
+                        <h6>Category</h6>
+                        {{ object.Category }}
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+    </div>
+    </div>
+
+{% endblock content %}

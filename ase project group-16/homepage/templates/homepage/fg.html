@@ -1,0 +1,28 @@
+{% extends "homepage/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container pt-5">
+    <div class="container pt-5 pr-5 pl-5 pb-0">
+        <div class="container p-5 shadow-lg bg-light" data-aos="zoom-out-up">
+            <div class="container-fluid" data-aos="fade-down">
+                <h5>Don't worry, we got your back</h5>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container p-5">
+        <div class="container p-5">
+             <div class="container pb-3">
+                    <a href="{% url 'signin' %}"><i class="fas fa-arrow-left"></i></a>
+             </div>
+            <form action="" method="post">
+                <div class="form-group">
+                    <input type="email" id="exampleInputEmail1"class="form-control pr-5" placeholder="enter email for resetting your password">
+               </div>
+                <div class=" form-group" data-aos="zoom-out-right">
+                    <button type="submit" class="btn btn-primary justify-content-center">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

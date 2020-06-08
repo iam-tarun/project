@@ -1,0 +1,151 @@
+{% extends "homepage/base.html" %}
+{% load static %}
+{% block content %}
+   <div class="container p-5">
+        <div class="container p-5">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade shadow-lg " data-ride="carousel" >
+                 <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="4000">
+                        <img src="{% static 'homepage/car2.jpg' %}" class="d-block w-100 img-fluid" alt="..." height="600" width="900">
+                        <div class="carousel-caption d-none d-md-block">
+                             <h5 class="text-dark" style="font-size: 20px">Better Living Through Sharing</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-interval="4000">
+                        <img src="{% static 'homepage/car4.jpg' %}" class="d-block w-100 img-fluid" alt="..." height="600" width="900">
+                        <div class="carousel-caption d-none d-md-block">
+                             <h5 class="text-dark" style="font-size: 20px">The Best Sharing Under One Roof</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-interval="4000">
+                        <img src="{% static 'homepage/car3.jpg' %}" class="d-block w-100 img-fluid" alt="..." height="600" width="900">
+                        <div class="carousel-caption d-none d-md-block">
+                             <h5 class="text-dark" style="font-size: 20px">Feel The Magic Of Sharing</h5>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+   </div>
+    <div class="container p-5">
+        <div class="container p-5">
+           <div class="row shadow-lg bg-light" data-aos="flip-up">
+               <div class="col-lg-6">
+                    <div class="container-fluid  text-center p-5" data-aos="zoom-out-right">
+                    <h2> Share Anything! </h2>
+                        <h6>Sharezone allows you to share and use resources instantly .</h6>
+                    </div>
+               </div>
+                <div class="col-lg-6 border-left border-top" data-aos="zoom-out-left">
+                    <div class="container-fluid  d-flex justify-conent-center text-center p-5">
+                    <h2> You can use Sharezone <br>
+                        in any device with ease .
+                    </h2>
+                    </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="container-fluid p-5 " data-aos="flip-down">
+           <div class="row p-4">
+                <div class="col pt-5">
+                    <div class="container pt-5  text-center" data-aos="zoom-out-right">
+                    <div class="col p-5">
+                        <h3>Forgot your password?</h3>
+                Change your password with your registered email safely.
+                    </div>
+                </div>
+            </div>
+               <div class="col-lg-6  ">
+                  <div class="container ">
+                       <div class="container">
+                <img src="{% static 'homepage/fgg.png' %}" class="d-block w-100 img-fluid" alt="..." height="350" width="500">
+                   </div>
+                </div>
+                  </div>
+            </div>
+    </div>
+    <div class="container p-5 ">
+    Famous people thoughts on Sharing.
+        <div class="row">
+            <div class="col p-5">
+                <div class="container p-5 bg-light shadow-lg" data-aos="flip-right">
+                    "The miracle is this: The more we share the more we have." <br>
+                    <div class="text-right pt-3 pb-5" data-aos="zoom-out-left">
+                                                — Leonard Nimoy
+                    </div>
+                    "If you are really thankful, what do you do? You share. "<br>
+                    <div class="text-right pt-3" data-aos="zoom-out-left">
+                                             — W. Clement Stone
+                    </div>
+                </div>
+            </div>
+            <div class="col  p-5">
+                <div class="container bg-light  p-5 shadow-lg" data-aos="flip-right">
+                "It is in the shelter of each other that the people live." <br>
+                    <div class="text-right pt-3 pb-5" data-aos="zoom-out-left">
+                                            — Irish Proverb
+                    </div>
+                    If you ask people why they give, the readiest answers offer clues to the mystery. God wants me to. I feel better about myself. Others need, and I have. I want to share. It's only right.
+                    <br>
+                    <div class="text-right pt-3" data-aos="zoom-out-left">
+                                             — Deepak Chopra
+                    </div>
+                </div>
+            </div>
+            <div class="col p-5">
+                <div class="container p-5 bg-light shadow-lg" data-aos="flip-right">
+                    "There is no joy in possession without sharing." <br>
+                    <div class="text-right pt-3 pb-5" data-aos="zoom-out-left">
+                                            — Erasmus
+                    </div>
+                    "Be willing to share your blessings. The only riches that last are the ones that are given away."
+                    <br>
+                    <div class="text-right pt-3" data-aos="zoom-out-left">
+                                             — David Khalil
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="row  shadow-lg bg-light d-flex justify-conent-center text-center p-5 " data-aos="flip-down">
+                <div class="col-lg-6">
+                    <h5>Start right away with your own account .</h5>
+                </div>
+                <div class="col-lg-6" data-aos="flip-down">
+                    <button type="button" class="btn btn-primary p-3"><a class = "text-decoration-none text-light"href="{% url 'signup' %}">Create Account</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary text-light ">
+        <div class="container-fluid border-bottom pt-3 pb-3">
+                Country/Region : India
+        </div>
+        <div class="row p-3">
+            <div class="col p-5">
+
+                        <h4>Resources used</h4>
+                <a class="text-light text-decoration-none" href="https://unsplash.com/wallpapers" target="_blank">Unsplash-Wallpapers</a><br>
+                <a class="text-light text-decoration-none" href="https://fontawesome.com/" target="_blank">Fontawesome-icons </a><br>
+                <a class="text-light text-decoration-none" href="https://getbootstrap.com/" target="_blank">Bootstrap-styling </a> <br>
+                <a class="text-light text-decoration-none" href="https://www.wow4u.com/" target="_blank">wow4u.com - quotes</a> <br>
+
+            </div>
+            <div class="col p-5">
+                        <h4>Developer</h4>
+                <a class="text-light text-decoration-none" href="https://www.jetbrains.com/pycharm/">PyCharm </a><br>
+                <a class="text-light text-decoration-none" href="https://www.djangoproject.com/">Django</a>
+            </div>
+            <div class="col p-5  border-left">
+                        <h4>Contact Us</h4>
+                        sharezoneiiits@gmail.com <br>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}

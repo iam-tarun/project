@@ -1,0 +1,34 @@
+{% extends "homepage/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container p-5">
+        <div class="container p-5">
+        <div class="container shadow-lg bg-light mb-5 p-5 " data-aos="zoom-out-up">
+            <div class="container p-5">
+                <div class="row px-0">
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <img class="border shadow rounded" src="{% static 'homepage/logo.jfif' %}" alt="logo" height="230" width="230">
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                    <form method="post" action="">
+                        <h3>Log in <br></h3>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="form-group" data-aos="fade-up">
+                            <button type="submit" class="btn btn-primary justify-content-center">Log in</button>
+                        </div>
+
+                        <small  id="emailHelp" class="form-text "><a class=" text-decoration-none text-primary" href="{% url 'password_reset' %}">forgot password</a></small>
+                    </form>
+                    </div>
+                </div>
+                <div class="container pt-5 d-flex justify-content-center">
+                    <small  id="emailHelp" class="form-text "><h6>Don't have an account?</h6><a class=" text-decoration-none text-primary" href="{% url 'signup' %}"><h6>create account</h6></a></small>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock content %}

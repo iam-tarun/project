@@ -1,0 +1,45 @@
+{% extends "userapp/base1.html" %}
+{% block content %}
+
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="container p-5">
+                <div class="row">
+                <div class="col">
+                        {% if notifications.count > 0 %}
+                    <h3> Notifications </h3>
+                    {% for n in notifications %}
+                       <div class="container p-4 bg-light shadow-lg rounded-capsule">
+                       <h3><a href="/notification/show/{{n.id}}">{{n.title}}</a></h3>
+                        <div class="container d-flex justify-content-end">
+                            <h6>--By {{n.curr_user}}</h6>
+                        </div>
+                       </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% if notifications.count == 0 %}
+                        <h5> No new notifications to read...</h5>
+                    {% endif %}
+                </div>
+                <div class="col p-0 ">
+                    <h3 class="display-4"> Recent messages </h3><br>
+                        {% for i in sent_notifications %}
+                        {% if i.curr_user == request.user.username %}
+                            <div class="container m-0 pb-2">
+                            <div class="container  m-0 bg-light shadow-lg">
+                            <h2 class="border-bottom display-4 p-0 m-0">{{i.title}}</h2>
+                                <p class="p-0 m-0 ">{{i.message}}</p><br>
+                                <div class="container p-0 m-0 d-flex justify-content-end">
+                                    <a class="text-decoration-none text-dark m-0" href="{% url 'view_profile'  i.user  %}"><p>TO {{i.user}} </p></a>
+                                </div>
+                            </div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

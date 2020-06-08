@@ -1,0 +1,28 @@
+{% extends "userapp/base1.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="container p-5">
+                <div class="container p-5 bg-light shadow-lg">
+                    <h2>{{notification.title}}</h2>
+                <p>{{notification.message}}</p>
+                    {% if groupuser.status == 9 %}
+                        <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit">Submit</button>
+                        </form>
+                    {% endif %}
+                    <div class="container d-flex justify-content-end">
+                                        <p> By --- {{notification.curr_user}} </p>
+                    </div>
+                <p><a href="/notification/delete/{{notification.id}}/">Mark as read</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

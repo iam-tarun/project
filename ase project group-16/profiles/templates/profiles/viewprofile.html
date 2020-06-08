@@ -1,0 +1,29 @@
+{% extends 'userapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="container p-5 bg-light shadow-lg rounded" style="opacity: 0.8">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="container d-flex justify-content-center ">
+                            <img class="rounded-circle" height="150" width="150" style="background-size: contain" src="{{ profile.image.url }}" alt="">
+                        </div>
+                        <h2 class="display-4">{{ person.username }}</h2>
+                    </div>
+                    <div class="col-lg-6">
+                         <h5>Name</h5><h6>{{ person.first_name }} {{ person.last_name }}</h6>
+                        <h5>Email</h5><h6>{{ person.email }}</h6><br>
+                        <h5>Phone</h5><h6>{{ profile.phone }}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="container p-5">
+                {% for item in announcements %}
+                    {{ item.title }}
+                    {{ item.desc }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
