@@ -1,0 +1,90 @@
+{% extends "userapp/base.html" %}
+{% load static %}
+{% block content %}
+
+ <link rel="stylesheet" href= "{% static 'rating/leader.css' %}">
+
+ <div class="container-fluid pt-5">
+         <div class="row pt-5">
+         <div class="col-lg-2 text-center">
+             <h5 style="font-size: 30px">Top Users of ShareZone</h5><br>
+             {% for top in user_top %}
+                 <img class="pull-left rounded-circle shadow-lg" hspace="70" height="120" width="120" src="{{ top.user.profiles.image.url }}" alt="">
+
+                 <a class="text-decoration-none  text-dark" href="{% url 'user-profile' top.user.username %}"> <br><br><br><br>
+                 <div class="list-group p-2 m-2 bg-light shadow-lg rounded-pill">
+                     <li class="list-group text-decoration-none  text-dark">{{ top.user.username }}</li> <br>
+                 </div>
+                 </a>
+             {% endfor %}
+         </div>
+         <div class="col-lg-8 border-left border-right text-center">
+             <h5 class="display-4"><u>LeaderBoard</u></h5>
+             <body>
+             <table class="table">
+             <thead>
+              <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">UserName</th>
+              <th scope="col">No_of_items_borrowed</th>
+              <th scope="col">No_of_items_shared</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Points</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {% for user in users %}
+            <tr>
+            <td></td>
+            <td><a href="{% url 'user-profile' user.user %}">{{ user.user }}</a></td>
+            <td>{{ user.borrowed_n }}</td>
+            <td>{{ user.shared_n }}</td>
+            <td>{{ user.avg_rating }}</td>
+            <td>{{ user.points }}</td>
+            </tr>
+{% endfor %}
+</tbody>
+</table>
+         </div>
+         <div class="col-lg-2 text-center">
+             <h5 style="font-size: 30px"></h5>
+              <img src="{% static 'rating/leaderboards.jpg' %}" alt="" height="240" width="260">
+
+              <a class="text-decoration-none  text-dark"> <br>
+              <div class="list-group p-2 m-2 bg-light shadow-lg square-pill">
+                  <li class="list-group text-decoration-none  text-dark">Earn More Points To Be In Top!!</li>
+                  </div>
+                  <a>
+
+              <a class="text-decoration-none  text-dark"> <br>
+              <div class="list-group p-2 m-2 bg-light shadow-lg square-pill">
+                  <li class="list-group text-decoration-none  text-dark">Share More Items To Earn More Points!!</li>
+              </div>
+              <a>
+
+                <a class="text-decoration-none  text-dark"> <br>
+                <div class="list-group p-2 m-2 bg-light shadow-lg square-pill">
+                    <li class="list-group text-decoration-none  text-dark">Be Good!, Be Fair! To Increase Your Rating!!</li>
+                </div>
+                <a>
+
+                  <a class="text-decoration-none  text-dark"> <br>
+                  <div class="list-group p-2 m-2 bg-light shadow-lg square-pill">
+                      <li class="list-group text-decoration-none  text-dark">Be Good! Help Others And Be A Top Ranker!!</li>
+                  </div>
+                  <a>
+
+                <a class="text-decoration-none  text-dark"> <br>
+                <div class="list-group p-2 m-2 bg-light shadow-lg square-pill">
+                    <li class="list-group text-decoration-none  text-dark">Good Rating + More Sharing Implies Good Rank!!</li>
+                </div>
+                <a>
+
+              </div>
+
+
+         </div>
+     </div>
+ </div>
+ {% endblock content %}

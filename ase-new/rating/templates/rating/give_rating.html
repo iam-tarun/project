@@ -1,0 +1,95 @@
+{% extends "userapp/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container p-5">
+    <div class="container p-5">
+        <div class="container p-4">
+
+            <div class="row">
+            <div class="col">
+              <center>
+                <h1> <u> Rating - {{ user.username }} </u> </h1> <br>
+
+             <link rel="stylesheet" href= "{% static 'rating/style.css' %}">
+
+             <img src="{% static 'rating/rate.jpg' %}" alt="" height="200" width="580"><br>
+
+
+                <form  action="rate/" method="post" >
+                  {% csrf_token %}
+
+                  <div class="container-lg">
+                  <input type="radio" name="rating" value=1>
+                  <label for="one">1 - </label>
+
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span> <br>
+
+                  <input type="radio" name="rating" value=2>
+                  <label for="two">2 - </label>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span> <br>
+
+                  <input type="radio" name="rating" value=3>
+                  <label for="three">3 - </label>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span><br>
+
+
+                  <input type="radio" name="rating" value=4>
+                  <label for="four">4 - </label>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span> <br>
+
+
+                  <input type="radio" name="rating" value=5>
+                  <label for="five">5 - </label>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span> <br> <br>
+
+                  <button type="submit"> Rate </button>
+                  </div>
+
+                </form>
+
+                </center>
+
+            </div>
+
+            <div class="col-lg-4 text-center">
+
+                <img src="{% static 'rating/rates5.jpg' %}" alt="" height="70" width="350"> <br> EXCELLENT - 5 <br><br>
+
+                <img src="{% static 'rating/rates4.jpg' %}" alt="" height="70" width="350">  VERY GOOD - 4 <br><br>
+
+                <img src="{% static 'rating/rates3.jpg' %}" alt="" height="70" width="350">  GOOD - 3  <br><br>
+
+                <img src="{% static 'rating/rates2.jpg' %}" alt="" height="70" width="350">  AVERAGE - 2 <br><br>
+
+                <img src="{% static 'rating/rates1.jpg' %}" alt="" height="70" width="350">  POOR - 1 <br><br>
+            </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{%  extends 'userapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="container p-5">
+            <div class="container p-5">
+                <div class="container p-5">
+                    <h5>Are you sure to delete</h5>
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

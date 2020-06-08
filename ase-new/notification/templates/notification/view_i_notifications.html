@@ -1,0 +1,29 @@
+{% extends "userapp/base.html" %}
+{% block content %}
+
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="container p-5">
+                <div class="row">
+                <div class="col">
+                    <h1> <u>ITEM NOTIFICATIONS</u> </h1>
+                        {% if notifications.count > 0 %}
+                    {% for n in notifications %}
+                       <div class="container p-4 bg-light shadow-lg rounded-capsule">
+                       <h3><a href="/notification/show_i/{{n.id}}">{{n.item_name}}</a></h3>
+                        <div class="container d-flex justify-content-end">
+                            <h6>--By {{n.curr_user}}</h6>
+                        </div>
+                       </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% if notifications.count == 0 %}
+                        <h5> No new notifications to read...</h5>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

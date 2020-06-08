@@ -1,0 +1,36 @@
+{% extends "userapp/base.html" %}
+{% block content %}
+
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="container bg-light shadow-lg p-5">
+             <div class="row">
+                 <div class="col-sm-6">
+                     <form action="give_i/" method="post">
+            {% csrf_token %}
+            <b> <u>NOTE </u> - Item-Name is Case-Sensitive. Enter exact name <b><br><br>
+            <label for="item_name">Item-Name: <br>
+            <input type="text" name="item_name"><br>
+
+            <label for="message">Message: </label><br>
+            <input type="textarea" name="message"><br><br>
+
+            <label for="return_date">Return Date: </label><br>
+            <input type="date" name="return_date"><br><br>
+
+            <label for="return_time">Return Time: </label><br>
+            <input type="time" name="return_time"><br><br>
+
+                 <div class="container p-2">
+                                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+                 </div>
+            </form>
+                 </div>
+                 <div class="col-sm-6">
+                     <h5>Discuss easily with other user for sharing.</h5>
+                 </div>
+             </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

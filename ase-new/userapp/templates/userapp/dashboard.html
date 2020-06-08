@@ -1,0 +1,51 @@
+{%  extends 'userapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid pt-5">
+        <div class="row pt-5">
+        <div class="col-lg-2 text-center">
+            <h5 style="font-size: 30px">Items Shared</h5>
+            {% for item in items_s %}
+                <a class="text-decoration-none  text-dark" href="{% url 'shared-items' item.id %}">
+                <div class="list-group p-2 m-2 bg-light shadow-lg rounded-pill">
+                    <li class="list-group text-decoration-none  text-dark">{{ item.item_name }}</li>
+                </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="col-lg-8 border-left border-right text-center">
+            <h5 class="display-4">Search For Items</h5>
+                        {% for group in groups %}
+                            <div class="container p-2">
+                                <a class="text-decoration-none text-dark" href="{% url 'group-home' group.group.id %}">
+                                    <div class="container p-5 border-rounded shadow-lg">
+                                    <div class="media border-bottom">
+                                        <span class="media-left pb-2">
+                                            <img class="pull-left rounded-circle shadow-lg"  height="75" width="75" src="{{ group.group.image.url }}" alt="">
+                                        </span>
+                                            <div class="media-left  pb-2 pt-2 pl-4">
+                                                <h3 style="text-align: center">{{ group.group.name }}</h3>
+                                            </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            {% empty %}
+                            <h3>Join a Group...</h3>
+                        {% endfor %}
+        </div>
+        <div class="col-lg-2 text-center">
+            <h5 style="font-size: 30px">Items Borrowed</h5>
+            {% for item in items_b %}
+                <a class="text-decoration-none  text-dark" href="{% url 'borrowed-items' item.id %}">
+                <div class="list-group p-2 m-2 bg-light shadow-lg rounded-pill">
+                    <li class="list-group text-decoration-none  text-dark">{{ item.item_name }}</li>
+                </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

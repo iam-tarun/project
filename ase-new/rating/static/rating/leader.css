@@ -1,0 +1,18 @@
+tbody
+{
+    counter-reset: Count-Value;
+}
+table
+{
+    border-collapse: separate;
+}
+tr td:first-child:before
+{
+  counter-increment: Count-Value;
+  content: counter(Count-Value);
+}
+
+.image {
+ background-image: url("images/leaderboard.jpg");
+ background-color: #cccccc;
+}

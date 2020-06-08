@@ -1,0 +1,29 @@
+{% extends "userapp/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container p-5">
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="row">
+            <div class="col">
+              <center>
+                <h1> <u> Report </u> </h1>
+
+
+                <form action="report/" method="post">
+                  {% csrf_token %}
+                  <label for="report"></label>
+                  <textarea name="report" rows="12" cols="60"></textarea>
+                  <br>
+                  <button type="submit"> Report </button>
+                </form>
+
+              </center>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

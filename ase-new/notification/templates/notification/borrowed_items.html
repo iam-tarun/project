@@ -1,0 +1,25 @@
+{% extends "userapp/base.html" %}
+{% load static %}
+{% block content %}
+
+div class="container p-5">
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="row">
+            <div class="col">
+              <center>
+              <h3 class="display-4"> <u> {{b_item.item_name}} </u> </h3><br>
+                        <h3>-->Borrowed From - {{b_item.shared_user}}</h3>
+                        </center>
+                    </div>
+                   </div>
+
+            </div>
+            </div>
+
+            <center>
+            <h4><a href="{% url 'give-personal-notification' b_item.shared_user %}">Send a notification</a> </h4>
+                  </center>
+
+
+{% endblock %}

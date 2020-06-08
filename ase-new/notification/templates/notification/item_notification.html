@@ -1,0 +1,30 @@
+{% extends "userapp/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="container p-5">
+        <div class="container p-5">
+            <div class="container p-5">
+                <div class="container p-5 bg-light shadow-lg">
+                    <h2>{{notification.item_name}}</h2>
+                <p>{{notification.message}}</p>
+                <p>Return Date - {{notification.return_date }} <p>
+                <p>Return Time - {{notification.return_time }} <p>
+
+                      <form action="" method="post">
+                      {% csrf_token %}
+                      {{ form|crispy }}
+                      <button type="submit">GIVE</button>
+                      </form>
+
+                  <div class="container d-flex justify-content-end">
+                                        <p> By --- {{notification.curr_user}} </p>
+                    </div>
+                <p><a href="/notification/delete/{{notification.id}}/">Mark as read</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
